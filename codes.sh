@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd ../buildroot
-make BR2_EXTERNAL=/home/h255t794/gem-tutorial/gem5-tutorial/buildroot gem5_defconfig && make -j 4
+make BR2_EXTERNAL=/home/h255t794/gem-tutorial/gem5-tutorial/buildroot gem5_defconfig && make -j$(nproc)
 cp output/images/rootfs.ext2 /home/h255t794/gem-tutorial/gem5-tutorial/resources
 cp output/images/vmlinux /home/h255t794/gem-tutorial/gem5-tutorial/resources
 
@@ -10,5 +10,4 @@ scons build/ARM/gem5.fast -j$(nproc)
 
 export GIT_ROOT=/home/h255t794/gem-tutorial/gem5-tutorial
 cd  ../run-scripts
-./run-script.sh --take-checkpoint 
-
+./run-script.sh --take-checkpoint --script gem5-script.sh
