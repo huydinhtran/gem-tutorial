@@ -14,5 +14,5 @@ cd gem5
 scons build/ARM/gem5.fast -j$(nproc)
 
 export GIT_ROOT=$current_directory
-cd  ../run-scripts
-./run-script.sh --take-checkpoint --script gem5-script.sh
+# cd  ../run-scripts
+# ./run-script.sh --take-checkpoint --script gem5-script.sh
