@@ -19,7 +19,7 @@ function setup_dirs {
 
 function run_simulation {
   "$GEM5_DIR/build/ARM/gem5.$GEM5TYPE" $DEBUG_FLAGS --outdir="$RUNDIR" \
-  "$GEM5_DIR"/configs/example/fs.py --cpu-type=$CPUTYPE --cpu-clock=2GHz\
+  "$GEM5_DIR"/configs/deprecated/example/fs.py --cpu-type=$CPUTYPE --cpu-clock=2GHz\
   --bootloader="$RESOURCES/binaries/boot.arm64" --root=/dev/sda  --kernel="$RESOURCES/$SCRIPT_NAME/binaries/vmlinux.arm64" --disk="$RESOURCES/$SCRIPT_NAME/rootfs.ext2" \
   --num-cpus=1 --mem-type=DDR4_2400_16x4 --mem-size=16384MB --script="$GUEST_SCRIPT_DIR/$GUEST_SCRIPT" \
   --checkpoint-dir="$CKPT_DIR" $CONFIGARGS
